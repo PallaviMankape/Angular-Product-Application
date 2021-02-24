@@ -1,0 +1,40 @@
+ <div class="container-fluid">
+  <button type="button" style="float: right;" (click)="openDialog()" data-toggle="modal"
+  data-target="#exampleModal" class="btn btn-primary mt-2">
+    Add Product
+  </button>
+</div>
+
+<div class="container">
+  <div class="row pt-4">
+    <div class="col-md-4 col-sm-4 mt-2" *ngFor = 'let product of productData'>
+          <div class="card ml-3 mt-3 card-img">
+            <div class="card-body card-img">
+                <img class="card-img-bottom" style="height: 80%; width: 100%;" [src]='product.url' alt="Card image"> 
+                <p class="p-0 m-0 productname">{{product.productName}}</p>
+                <p class="p-0 m-0" style="color: gray;">{{product.price | currency: 'INR'}}</p> 
+                <a href="dashboard/product">See More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+  
+
+  <!-- <ol>
+    <li>
+      <mat-form-field>
+        <mat-label>Where do you stay?</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Pick city or food</button>
+    </li>
+    <li *ngIf="city">
+      You chose: <i>{{city}}</i>
+    </li>
+    <li *ngIf="food_from_modal">
+      I love {{food_from_modal}}
+    </li>
+  </ol> -->

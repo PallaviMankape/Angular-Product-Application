@@ -1,0 +1,34 @@
+<div class="login-form">
+    <div class="main-div">
+      <div class="panel">
+        <h2>Admin Login</h2>
+        <p>Please enter your email and password</p>
+      </div>
+      <form id="Login" [formGroup]="form" (ngSubmit)='onSubmit()'>
+          <div>
+            <span *ngIf="isValidUser"
+            class="text-danger support-text">Invalid Username or Password.</span>
+          </div>
+        <div class="form-group">
+          <input type="email" class="form-control" formControlName="email" id="inputEmail" placeholder="Email Address"/>
+          <span *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched"
+                 class="text-danger support-text">Username is required.</span>
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" formControlName="password" id="inputPassword" placeholder="Password"/>
+          <span *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched"
+                 class="text-danger support-text">Password is required.</span>
+
+        </div>
+        <div class="forgot">
+          <a href="reset.html">Forgot password?</a>
+        </div>
+        <button type="submit"  class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngFor = 'let i of product'>
+    
+  </div>
